@@ -11,11 +11,11 @@
 
 - **registrar** — сервис регистрации событий.
     - Использует Spring Batch для пакетной обработки сообщений из топика `events`.
-    - Сохраняет события в свою PostgreSQL БД.
+    - Сохраняет события в свою БД.
     - Отправляет подтверждения в топик `events-confirmed`.
     - Предоставляет REST API `/event/info`.
 
-- **common** — общий модуль с DTO и enums.
+- **sharedSources** — общий модуль с DTO,enums и ExceptionHandler.
 
 ## Запуск
 - `docker compose build`
