@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: registrar
+
+  datasource:
+    url: jdbc:postgresql://postgres-reg:5432/registrar_db
+    username: user
+    password: pass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: false
+  liquibase:
+    enabled: true
+    change-log: classpath:db.changelog/db.changelog-master.yml
+
+server:
+  port: 8083
+
+app:
+  service-id: registrar
+  batch:
+    chunk-size: 10
+    job-interval-ms: 10000

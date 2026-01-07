@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: generator-1
+
+  datasource:
+    url: jdbc:postgresql://postgres-gen1:5432/gen1db
+    username: user
+    password: pass
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        format_sql: false
+  liquibase:
+    enabled: true
+    change-log: classpath:db.changelog/db.changelog-master.yml
+
+server:
+  port: 8081
+
+app:
+  service-id: generator1
+  generate-interval-ms: 5000
